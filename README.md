@@ -29,6 +29,8 @@ The design specifications for the MechaCar suspension coils dictate that the var
 
 ## T-Tests on Suspension Coils
 
+The T-tests illustrate that the p-value for all lots together is 1, which means the mean for our sample is consistent with the mean for the population.  The p-values for each lot individually vary, illustrated below: 
+
 ALL LOTS
 
 ![All Lots](All_Lots.png)

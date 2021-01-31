@@ -20,3 +20,15 @@ total_summary <- psi_metrics %>% summarize(Mean=mean(PSI),Median=median(PSI),Var
 
 # Create lot summary
 lot_summary <- psi_metrics %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI))
+
+# Test PSI of all lots against population mean
+t.test(psi_metrics$PSI,mu=as.numeric(total_summary$Mean))
+
+# Test PSI of Lot 1 against population mean
+t.test(subset(psi_metrics, Manufacturing_Lot == "Lot1")$PSI, mu=as.numeric(total_summary$Mean))
+
+# Test PSI of Lot 2 against population mean
+t.test(subset(psi_metrics, Manufacturing_Lot == "Lot2")$PSI, mu=as.numeric(total_summary$Mean))
+
+# Test PSI of Lot 3 against population mean
+t.test(subset(psi_metrics, Manufacturing_Lot == "Lot3")$PSI, mu=as.numeric(total_summary$Mean))
